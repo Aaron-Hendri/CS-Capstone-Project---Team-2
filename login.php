@@ -28,7 +28,7 @@ if(isset($_POST['Login'])) {
     header("location: MainPage.html");
   }
   else {
-    $error = "Your Login Name or Password is invalid013";
+    $error = "Your Login Name or Password is invalid";
     echo $error;
  }
 }
