@@ -1,8 +1,8 @@
 /* root */
 :root {
     --button: #f9f9f9;
-    --yellow: goldenrod;
-    --dark_yellow: darkgoldenrod;
+    --yellow: #ffc629;
+    --dark_yellow: goldenrod;
 }
 
 
