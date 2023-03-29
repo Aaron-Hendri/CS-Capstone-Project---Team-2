@@ -1,0 +1,440 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="MainPage.css" />
+<style>
+</style>
+</head>
+<body>
+	<a href="../TeamProject/loginPage.php" style = "padding-top:40px; float:right;">
+		<img src="signout.png" width="40" height="40">
+		<div class = signout>
+			Sign Out
+		</div> 
+	</a>
+
+
+<h2>
+	<img src="bigc.png" alt="Cameron Homepage" style=width:46px;height:41px;>
+	Aggie Access
+</h2>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="HomePage">
+   <img src="HomeImage.png" width="30" height="30" /> Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Student')" id="StudentPage">
+   <img src="StudentImage.png" width="30" height="30" /> Student</button>
+    <button class="tablinks" onclick="openTab(event, 'Faculty')" id="FacultyPage">
+   <img src="FacultyImage.png" width="30" height="30" /> Faculty</button>
+     <button class="tablinks" onclick="openTab(event, 'Secretary')" id="SecretaryPage">
+   <img src="SecretaryImage.png" width="30" height="30" /> Secretary</button>
+  <button class="tablinks" onclick="openTab(event, 'Chair')" id="ChairPage">
+   <img src="ChairImage.png" width="30" height="30" /> Chair</button>
+  <button class="tablinks" onclick="openTab(event, 'Admin')" id="AdminPage">
+   <img src="AdminImage.png" width="30" height="30" /> Admin</button>
+</div>
+
+<div id="Home" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Home Page</p>
+	</div>
+
+	<div class = "quicklinksbox">
+		<p>Quick Links</p>
+		<button class="adminButton" onclick="openTab(event, 'Test')" id="TestPage"> Test </button>
+	</div>
+</div>
+
+<div id="Student" class="tabcontent">
+	
+	<div class = "mainbox">
+  		<p>Student Page</p>
+	</div>
+
+	<div class = "studentlinksbox">
+		<p>Student Links</p>
+		<button class="studentButton" onclick="openTab(event, 'ContactAdvisor')" id="ContactAdvisorPage"> Contact Advisor </button>
+		<button class="studentButton" onclick="openTab(event, 'ListCourses')" id="ListCoursesPage"> List Courses </button>
+		<button class="studentButton" onclick="openTab(event, 'RequestPIN')" id="RequestPINPage"> Request PIN </button>
+		<button class="studentButton" onclick="openTab(event, 'EnrollClasses')" id="EnrollClassesPage"> Enroll Classes </button>
+		<button class="studentButton" onclick="openTab(event, 'PrintSchedule')" id="PrintSchedulePage"> Print Schedule </button>
+	</div>
+
+</div>
+
+<div id="Faculty" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Faculty Page</p>
+	</div>
+
+	<div class = "facultylinksbox">
+		<p>Faculty Links</p>
+		<button class="facultyButton" onclick="openTab(event, 'ListAdvisers')" id="ListAdvisersPage"> List Advisers </button>
+		<button class="facultyButton" onclick="openTab(event, 'ListClasses')" id="ListClassesPage"> List Classes </button>
+		<button class="facultyButton" onclick="openTab(event, 'TeachingSchedule')" id="TeachingSchedulePage"> Teaching Schedule </button>
+		<button class="facultyButton" onclick="openTab(event, 'ClassRosters')" id="ClassRostersPage"> Class Rosters </button>
+		<button class="facultyButton" onclick="openTab(event, 'PrintStudentSchedule')" id="PrintStudentSchedulePage"> Print Student Schedule </button>
+		<button class="facultyButton" onclick="openTab(event, 'EnrollaStudent')" id="EnrollaStudentPage"> Enroll a Student </button>
+		<button class="facultyButton" onclick="openTab(event, 'RequestOverride')" id="RequestOverridePage"> Request Override </button>
+		<button class="facultyButton" onclick="openTab(event, 'ContactStudents')" id="ContactStudentsPage"> Contact Students </button>
+	</div>
+
+</div>
+
+<div id="Secretary" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Secretary Page</p>
+	</div>
+
+	<div class = "secretarylinksbox">
+		<p>Secretary Links</p>
+		<button class="secretaryButton" onclick="openTab(event, 'ListCSstudents')" id="ListCSstudentsPage"> List CS Students </button>
+		<button class="secretaryButton" onclick="openTab(event, 'ListITstudents')" id="ListITstudentsPage"> List IT Students </button>
+		<button class="secretaryButton" onclick="openTab(event, 'ListAdvisers')" id="ListAdvisersPage"> List Advisers </button>
+		<button class="secretaryButton" onclick="openTab(event, 'SignStudentToAdviser')" id="SignStudentToAdviserPage"> Sign a Student To an Adviser </button>
+		<button class="secretaryButton" onclick="openTab(event, 'ContactFaculty')" id="ContactFacultyPage"> Contact Faculty </button>
+		<button class="secretaryButton" onclick="openTab(event, 'ContactStudent')" id="ContactStudentPage"> Contact Student </button>
+	</div>
+
+</div>
+
+<div id="Chair" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Chair Page</p>
+	</div>
+
+	<div class = "chairlinksbox">
+		<p>Chair Links</p>
+		<button class="chairButton" onclick="openTab(event, 'ListCSstudents')" id="ListCSstudentsPage"> List CS Students </button>
+		<button class="chairButton" onclick="openTab(event, 'ListITstudents')" id="ListITstudentsPage"> List IT Students </button>
+		<button class="chairButton" onclick="openTab(event, 'ListAdvisers')" id="ListAdvisersPage"> List Advisers </button>
+		<button class="chairButton" onclick="openTab(event, 'ListFacultySchedules')" id="ListFacultySchedulesPage"> List Faculty Schedules </button>
+		<button class="chairButton" onclick="openTab(event, 'EnrollaStudent')" id="EnrollaStudentPage"> Enroll a Student </button>
+		<button class="chairButton" onclick="openTab(event, 'SignStudentToAdviser')" id="SignStudentToAdviserPage"> Sign a Student To an Adviser </button>
+		<button class="chairButton" onclick="openTab(event, 'ContactFaculty')" id="ContactFacultyPage"> Contact Faculty </button>
+		<button class="chairButton" onclick="openTab(event, 'ContactStudent')" id="ContactStudentPage"> Contact Student </button>
+		<button class="chairButton" onclick="openTab(event, 'GrantOverides')" id="GrantOveridesPage"> Grant Overides </button>
+		<button class="chairButton" onclick="openTab(event, 'FindClassListing')" id="FindClassListingPage"> Find Class Listing </button>
+	</div>
+
+</div>
+
+<div id="Admin" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Admin Page</p>
+	</div>
+
+	<div class = "adminlinksbox">
+		<p>Admin Links</p>
+		<button class="adminButton" onclick="openTab(event, 'Create User')" id="CreateUserPage"> Create User </button>
+		<button class="adminButton" onclick="openTab(event, 'Delete User')" id="DeleteUserPage"> Delete User </button>
+	</div>
+
+</div>
+
+
+
+<div id="Test" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Test Page</p>
+	</div>
+
+</div>
+
+
+<!-- STUDENT LINKS -->
+<div id="ContactAdvisor" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Contact Advisor for Enrollment</p>
+	</div>
+
+</div>
+
+<div id="ListCourses" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>List of Courses</p>
+	</div>
+
+</div>
+
+<div id="RequestPIN" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Request Enrollment PIN</p>
+	</div>
+
+</div>
+
+<div id="EnrollClasses" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Enroll Classes</p>
+	</div>
+
+</div>
+
+<div id="PrintSchedule" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Print Schedule</p>
+	</div>
+
+</div>
+
+
+<!-- FACULTY LINKS -->
+<div id="ListAdvisers" class="tabcontent"> <!-- Used in Secretary and Chair -->
+
+	<div class = "mainbox">
+  		<p>List Advisers</p>
+	</div>
+
+</div>
+
+<div id="ListClasses" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>List of Classes</p>
+	</div>
+
+</div>
+
+<div id="TeachingSchedule" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Teaching Schedule</p>
+	</div>
+
+</div>
+
+<div id="ClassRosters" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Class Rosters</p>
+	</div>
+
+</div>
+
+<div id="PrintStudentSchedule" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Print Student Schedule</p>
+	</div>
+
+</div>
+
+<div id="EnrollaStudent" class="tabcontent"> <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Enroll a Student</p>
+	</div>
+
+</div>
+
+<div id="RequestOverride" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Request Override</p>
+	</div>
+
+</div>
+
+<div id="ContactStudents" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Contact Students</p>
+	</div>
+
+</div>
+
+
+<!-- SECRETARY LINKS -->
+<div id="ListCSstudents" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>List of CS Students</p>
+	</div>
+
+</div>
+
+<div id="ListITstudents" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>List of IT Students</p>
+	</div>
+
+</div>
+
+<div id="SignStudentToAdviser" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Sign a Student to an Advisor</p>
+	</div>
+
+</div>
+
+<div id="ContactFaculty" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Contact Faculty</p>
+	</div>
+
+</div>
+
+<div id="ContactStudent" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Contact Student</p>
+	</div>
+
+</div>
+
+
+<!-- CHAIR LINKS -->
+<div id="ListFacultySchedules" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>List of Faculty Teaching Schedules</p>
+	</div>
+
+</div>
+
+<div id="GrantOverides" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Grant Overrides</p>
+	</div>
+
+</div>
+
+<div id="FindClassListing" class="tabcontent">  <!-- used in Chair -->
+
+	<div class = "mainbox">
+  		<p>Find Class Listing</p>
+	</div>
+
+</div>
+
+
+<!-- ADMIN LINKS -->
+<div id="Create User" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Create New User Page</p>
+	</div>
+
+	<div class = "createuser">
+		<p>New User Form</p>
+
+  	<form>
+		User ID: <input type = "text" name = "user_id">
+		<br><br>
+		Password: <input type = "text" name = "password">
+		<br><br>
+		User Type: <input type = "text" name = "user_type">
+  	</form>
+	<div class = "input_spacing">
+      	<form action="">
+         	<button type="submit" class = "inputUser">Create User</button>
+	</div>
+	</div>
+</div>
+
+<div id="Delete User" class="tabcontent">
+
+	<div class = "mainbox">
+  		<p>Delete User Page</p>
+	</div>
+
+	<div class = "deleteuser">
+		<p>Delete Users</p>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function openTab(evt, TabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(TabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+var usertype = "<?php echo $_SESSION['session_usertype']; ?>";
+
+if(usertype == "student")
+{
+document.getElementById("FacultyPage").style.display = "none";
+document.getElementById("SecretaryPage").style.display = "none";
+document.getElementById("ChairPage").style.display = "none";
+document.getElementById("AdminPage").style.display = "none";
+}
+else if(usertype == "faculty")
+{
+document.getElementById("StudentPage").style.display = "none";
+document.getElementById("SecretaryPage").style.display = "none";
+document.getElementById("ChairPage").style.display = "none";
+document.getElementById("AdminPage").style.display = "none";
+}
+else if(usertype == "secretary")
+{
+document.getElementById("StudentPage").style.display = "none";
+document.getElementById("FacultyPage").style.display = "none";
+document.getElementById("ChairPage").style.display = "none";
+document.getElementById("AdminPage").style.display = "none";
+}
+else if(usertype == "chair")
+{
+document.getElementById("StudentPage").style.display = "none";
+document.getElementById("FacultyPage").style.display = "none";
+document.getElementById("SecretaryPage").style.display = "none";
+document.getElementById("AdminPage").style.display = "none";
+}
+else if(usertype == "admin")
+{
+document.getElementById("StudentPage").style.display = "none";
+document.getElementById("FacultyPage").style.display = "none";
+document.getElementById("SecretaryPage").style.display = "none";
+document.getElementById("ChairPage").style.display = "none";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("HomePage").click();
+
+//document.getElementById("AdminPage").style.display = "none"; // none hides the element
+//document.getElementById("AdminPage").style.display = "initial"; // initial re-enables the element
+</script>
+   
+</body>
+</html> 
