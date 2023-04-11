@@ -22,14 +22,15 @@
 		if($usertype == "student")
 		{
 		$sid = $_POST['student_id'];
-		$user = $_POST['student_user'];
 		$pass = $_POST['student_password'];
 		$fname = $_POST['student_firstName'];
 		$lname = $_POST['student_lastName'];
 		$major = $_POST['student_major'];
-		$email = $_POST['student_email'];
 		$class = $_POST['student_classification'];
-	
+
+		$user = strtolower(substr($fname, 0, 1)) . strtolower(substr($lname, 0, 1)) . $sid;
+		$email = strtolower(substr($fname, 0, 1)) . strtolower(substr($lname, 0, 1)) . $sid . "@cameron.edu";
+
 		$sql = "INSERT INTO student (studentID, firstName, lastName, major, emailAddress, class) VALUES('$sid', '$fname', '$lname', '$major', '$email', '$class')";
 		
 		$result = $pdo->query($sql);
@@ -41,13 +42,14 @@
 		else if($usertype == "faculty" || $usertype == "secretary" || $usertype == "chair")
 		{
 			$fid = $_POST['faculty_id'];
-			$user = $_POST['faculty_user'];
 			$pass = $_POST['faculty_password'];
 			$fname = $_POST['faculty_firstName'];
 			$lname = $_POST['faculty_lastName'];
-			$email = $_POST['faculty_email'];
 			$office = $_POST['faculty_office'];
 			$phone = $_POST['faculty_phone'];
+
+			$user = strtolower(substr($fname, 0, 1)) . strtolower(substr($lname, 0, 1)) . $fid;
+			$email = strtolower($fname) . strtolower(substr($lname, 0, 1)) . "@cameron.edu";
 
 			$sql = "INSERT INTO faculty (facultyID, firstName, lastName, phoneNum, emailAddress, officeLocation) VALUES('$fid', '$fname', '$lname', '$email', '$office', '$phone')";
 		

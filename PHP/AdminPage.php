@@ -79,13 +79,9 @@ session_start();
 		<br><br>
 		Password: <input type = "text" name = "student_password" id="student_password" required="required">
 		<br><br>
-		Username: <input type = "text" name = "student_user" id="student_user" required="required">
-		<br><br>
 		First Name: <input type = "text" name = "student_firstName" id="student_firstName" required="required">
 		<br><br>
 		Last Name: <input type = "text" name = "student_lastName" id="student_lastName" required="required">
-		<br><br>
-		Email Address: <input type = "text" name = "student_email" id="student_email" required="required">
 		<br><br>
 		Major: <input type = "text" name = "student_major" id="student_major" required="required">
 		<br><br>
@@ -112,15 +108,11 @@ session_start();
 		<br><br>
 		User ID: <input type = "text" name = "faculty_id" id="faculty_id" required="required">
 		<br><br>
-		Username: <input type = "text" name = "faculty_user" id="faculty_user" required="required">
-		<br><br>
 		Password: <input type = "text" name = "faculty_password" id="faculty_password" required="required">
 		<br><br>
 		First Name: <input type = "text" name = "faculty_firstName" id="faculty_firstName" required="required">
 		<br><br>
 		Last Name: <input type = "text" name = "faculty_lastName" id="faculty_lastName" required="required">
-		<br><br>
-		Email Address: <input type = "text" name = "faculty_email" id="faculty_email" required="required">
 		<br><br>
 		Office Location: <input type = "text" name = "faculty_office" id="faculty_office" required="required">
 		<br><br>
@@ -146,15 +138,11 @@ session_start();
 		<br><br>
 		User ID: <input type = "text" name = "faculty_id" id="faculty_id" required="required">
 		<br><br>
-		Username: <input type = "text" name = "faculty_user" id="faculty_user" required="required">
-		<br><br>
 		Password: <input type = "text" name = "faculty_password" id="faculty_password" required="required">
 		<br><br>
 		First Name: <input type = "text" name = "faculty_firstName" id="faculty_firstName" required="required">
 		<br><br>
 		Last Name: <input type = "text" name = "faculty_lastName" id="faculty_lastName" required="required">
-		<br><br>
-		Email Address: <input type = "text" name = "faculty_email" id="faculty_email" required="required">
 		<br><br>
 		Office Location: <input type = "text" name = "faculty_office" id="faculty_office" required="required">
 		<br><br>
@@ -180,15 +168,11 @@ session_start();
 		<br><br>
 		User ID: <input type = "text" name = "faculty_id" id="faculty_id" required="required">
 		<br><br>
-		Username: <input type = "text" name = "faculty_user" id="faculty_user" required="required">
-		<br><br>
 		Password: <input type = "text" name = "faculty_password" id="faculty_password" required="required">
 		<br><br>
 		First Name: <input type = "text" name = "faculty_firstName" id="faculty_firstName" required="required">
 		<br><br>
 		Last Name: <input type = "text" name = "faculty_lastName" id="faculty_lastName" required="required">
-		<br><br>
-		Email Address: <input type = "text" name = "faculty_email" id="faculty_email" required="required">
 		<br><br>
 		Office Location: <input type = "text" name = "faculty_office" id="faculty_office" required="required">
 		<br><br>
@@ -247,13 +231,20 @@ session_start();
 
 <div id="Delete User" class="tabcontent">
 
-	<div class = "mainbox">
-  		<p>Delete User Page</p>
-	</div>
+    <div class = "mainbox">
+          <p>Delete User Page</p>
+    </div>
 
-	<div class = "deleteuser">
-		<p>Delete Users</p>
-	</div>
+    <div class = "createauser">
+        <p>Delete Users</p>
+        <form method="post" action="delUser.php">
+        User ID: <input type = "text" name = "userID" id="userID" required="required">
+        <br><br>
+        <div class = "input_spacing">
+             <button type="submit" name = "delUser" class = "inputUser">Delete User</button>
+        </div>
+        </form>
+    </div>
 
 </div>
 

@@ -66,33 +66,69 @@ session_start();
 
 </div>
 
-
-
-
 <!-- FACULTY LINKS -->
 <div id="ListAdvisers" class="tabcontent"> <!-- Used in Secretary and Chair -->
 
-	<div class = "mainbox">
-  		<p>List Advisers</p>
-	</div>
+    <div class = "mainbox">
+        <p>List Advisers</p>
+    </div>
 
+	<div class = "listadvisers">
+
+		<?php
+		
+			require_once "pdoconfig.php";
+	
+	try{
+		$pdo = new PDO($attr, $db_user, $db_pass, $opts);
+	}catch(PDOException $e){
+		throw new PDOException($e->getMessage(), (int)$e->getCode());
+	}
+	
+	$sql = "SELECT * FROM faculty INNER JOIN facultyadvisor ON faculty.facultyID=facultyadvisor.facultyID GROUP BY facultyadvisor.facultyID";
+	$result = $pdo->query($sql);
+	
+	
+	if(1==1){
+        echo "<table border='1' bgcolor='goldenrod'>";
+       	echo "<tr><td><b>Faculty ID</td></b><td><b>First Name</td></b><td><b>Last Name</td></b><td><b>email</td></b><td><b>Office</td></b><td><b>Phone</td></b></tr> \n";
+	   
+		while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            echo "<tr><td>{$row['facultyID']}</td><td>{$row['firstName']}</td><td>{$row['lastName']}</td><td>{$row['emailAddress']}</td><td>{$row['officeLocation']}</td><td>{$row['phoneNum']}</td></tr>\n";	
+		}
+		echo "</table>";
+		}
+ //  please don't break.
+?>
+    </div>
 </div>
-
 <div id="ListClasses" class="tabcontent">
 
-	<div class = "mainbox">
-  		<p>List of Classes</p>
-	</div>
-
+    <div class = "mainbox">
+          <p>List of Classes</p>
+    </div>
+    <div class = "createauser">
+        <form action = "listClass.php" method = "post">
+            <button type = "submit" name = "listClass" class = "inputUser">List Courses</button>
+        </form>
+        </div>
 </div>
 
 <div id="TeachingSchedule" class="tabcontent">
 
-	<div class = "mainbox">
-  		<p>Teaching Schedule</p>
-	</div>
+    <div class = "mainbox">
+          <p>Teaching Schedule</p>
+    </div>
 
-</div>
+    <div class = "listadvisers">
+        <p>Enter Faculty ID below:</p>
+        <form action = "teachingSchedule.php" method = "post">
+            SEARCH<input type="text" name="fid">
+            <input type="submit" name = "teachingSchedule">
+	</form>
+<!--        <button type = "submit" name = "teachingSchedule" class = "inputUser">2nd Teaching Schedule</button>-->
+    </div>
+	</div>
 
 <div id="ClassRosters" class="tabcontent">
 
