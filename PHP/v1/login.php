@@ -1,0 +1,59 @@
+<?php
+session_start();
+// Connect to the database
+require_once "config.php";
+$conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
+
+$_SESSION['uName'] = $_POST['username'];
+
+$ID = intval(substr($_POST['username'], 2));
+/*$sql = "SELECT studentID FROM student WHERE studentID = $ID";
+
+$resultID = $conn->query($sql);*/
+
+$_SESSION['uID'] = $ID;
+
+if($conn->connect_error){
+  die("Connection Failed: ".$conn->connect_error);
+}
+echo "Connected successfully".'<br>';
+
+if(isset($_POST['Login'])) {
+  //if($_POST['userType'] == 'faculty')
+  $myusername = $_POST['username'];
+  $mypassword = $_POST['password'];
+
+  $sql = "SELECT * FROM login WHERE username = '$myusername' and password = '$mypassword'";
+  //$sql = "select * from login";
+  $result = $conn->query($sql);
+  $row = mysqli_fetch_assoc($result);
+  
+  echo  'My username is '.$myusername.'<br>';
+  echo  'My password is '.$mypassword.'<br>';
+  echo $row.'<br>';
+
+  if(mysqli_num_rows($result) == 1){
+  //if($myusername = $row['username'] && $mypassword = $row['password']){
+    $usertype = $row['userType'];
+    //$_SESSION['session_usertype'] = $row['userType'];
+    if($usertype == "student")
+    header("location: StudentPage.php");
+    else if($usertype == "faculty")
+    header("location: FacultyPage.php");
+    else if($usertype == "secretary")
+    header("location: SecretaryPage.php");
+    else if($usertype == "chair")
+    header("location: ChairPage.php");
+    else if($usertype == "admin")
+    header("location: AdminPage.php");
+  }
+  else {
+    //$error = "Your Login Name or Password is invalid";
+    //echo $error;
+	header("location: loginPage.php");
+ }
+}
+// Close the database connection and statement
+mysqli_close($result);
+mysqli_close($conn);
+?>
